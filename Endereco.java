@@ -1,6 +1,5 @@
-import java.util.Date;
-
-public class Endereco extends Funcionario {
+abstract class Endereco {
+    
     private String CEP;
     private String cidade;
     private String rua;
@@ -9,12 +8,9 @@ public class Endereco extends Funcionario {
     private String complemento;
 
     // Construtor de Endereco que utiliza o construtor de Funcionario e inicializa os atributos especificos de Endereco
-    public Endereco(
-            String NomePessoa, int CPF, Date DataNasc, int Telefone, String EmailPessoa,
-            double salario, String cargo,
-            String CEP, String cidade, String rua, String bairro, int numero, String complemento
-    ) {
-        super(NomePessoa, CPF, DataNasc, Telefone, EmailPessoa, salario, cargo);
+    public Endereco (){}
+
+    public Endereco(String CEP, String cidade, String rua, String bairro, int numero, String complemento) {
         this.CEP = CEP;
         this.cidade = cidade;
         this.rua = rua;

@@ -4,13 +4,13 @@ public class Pessoa extends Endereco {
     private String NomePessoa;
     private String CPF;
     private Date DataNasc;
-    private int Telefone;
+    private String Telefone;
     private String EmailPessoa;
 
     // Construtor
     public Pessoa(){}
 
-    public Pessoa(String NomePessoa, String CPF, Date DataNasc, int Telefone, String EmailPessoa) {
+    public Pessoa(String NomePessoa, String CPF, Date DataNasc, String Telefone, String EmailPessoa) {
         super();
         this.NomePessoa = NomePessoa;
         this.CPF = CPF;
@@ -32,7 +32,7 @@ public class Pessoa extends Endereco {
         return DataNasc;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return Telefone;
     }
 
@@ -53,7 +53,7 @@ public class Pessoa extends Endereco {
         this.DataNasc = DataNasc;
     }
 
-    public void setTelefone(int Telefone) {
+    public void setTelefone(String Telefone) {
         this.Telefone = Telefone;
     }
 

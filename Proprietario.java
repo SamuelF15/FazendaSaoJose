@@ -1,9 +1,9 @@
-import java.util.Date;
+
 public class Proprietario extends Usuario {
     private int IdProprietario;
 
-    public Proprietario(String NomePessoa, int CPF, Date DataNasc, int Telefone, String EmailPessoa, String NomeUser, char[] SenhaUser, int IdProprietario) {
-        super(NomePessoa, CPF, DataNasc, Telefone, EmailPessoa, NomeUser, SenhaUser);
+    public Proprietario(int IdProprietario) {
+        super();
         this.IdProprietario = IdProprietario;
     }
 

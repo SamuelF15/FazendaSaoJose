@@ -1,10 +1,8 @@
-import java.util.Date;
-
 public class Admin extends Usuario {
     private int IdAdmin;
 
-    public Admin(String NomePessoa, int CPF, Date DataNasc, int Telefone, String EmailPessoa, String NomeUser, char[] SenhaUser, int IdAdmin) {
-        super(NomePessoa, CPF, DataNasc, Telefone, EmailPessoa, NomeUser, SenhaUser);
+    public Admin( int IdAdmin) {
+        super();
         this.IdAdmin = IdAdmin;
     }
 

@@ -1,11 +1,11 @@
-import java.util.Date;
-
-public class Usuario extends Pessoa {
+public class Usuario {
     private String NomeUser;
     private char[] SenhaUser = new char[12];
 
-    public Usuario(String NomePessoa, int CPF, Date DataNasc, int Telefone, String EmailPessoa, String NomeUser, char[] SenhaUser) {
-        super(NomePessoa, CPF, DataNasc, Telefone, EmailPessoa);
+    public Usuario (){}
+
+    
+    public Usuario( String NomeUser, char[] SenhaUser) {
         this.NomeUser = NomeUser;
         this.SenhaUser = SenhaUser;
     }
