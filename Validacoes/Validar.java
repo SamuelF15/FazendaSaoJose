@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 
 public class Validar {
 	// validando Nome da pessoa
-	public static boolean validarNomePessoa(String NomePess) {
+	public static boolean validarNomesLetras(String NomePess) {
 		String ValidarNomP = "^[A-Za-z]{85}";
 		Pattern compiladorNom = Pattern.compile(ValidarNomP);
 		Matcher verificadorNom = compiladorNom.matcher(NomePess);
@@ -19,7 +19,61 @@ public class Validar {
 	}
 
 	// validando CPF
-	// public static boolean validarCPF(String CPF){}
+	public class ValidadorCPF {
+
+		public static void main(String[] args) {
+			String cpf = "12345678909"; // Substitua isso pelo CPF que você quer validar
+			if (validarCPF(cpf)) {
+				System.out.println("CPF válido");
+			} else {
+				System.out.println("CPF inválido");
+			}
+		}
+	
+		public static boolean validarCPF(String cpf) {
+			// Remove caracteres não numéricos do CPF
+			cpf = cpf.replaceAll("[^0-9]", "");
+	
+			// Verifica se o CPF tem 11 dígitos
+			if (cpf.length() != 11) {
+				return false;
+			}
+	
+			// Calcula o primeiro dígito verificador
+			int soma = 0;
+			for (int i = 0; i < 9; i++) {
+				soma += Character.getNumericValue(cpf.charAt(i)) * (10 - i);
+			}
+			int primeiroDigito = 11 - (soma % 11);
+			if (primeiroDigito > 9) {
+				primeiroDigito = 0;
+			}
+	
+			// Verifica o primeiro dígito verificador
+			if (Character.getNumericValue(cpf.charAt(9)) != primeiroDigito) {
+				return false;
+			}
+	
+			// Calcula o segundo dígito verificador
+			soma = 0;
+			for (int i = 0; i < 10; i++) {
+				soma += Character.getNumericValue(cpf.charAt(i)) * (11 - i);
+			}
+			int segundoDigito = 11 - (soma % 11);
+			if (segundoDigito > 9) {
+				segundoDigito = 0;
+			}
+	
+			// Verifica o segundo dígito verificador
+			if (Character.getNumericValue(cpf.charAt(10)) != segundoDigito) {
+				return false;
+			}
+	
+			// Se chegou até aqui, o CPF é válido
+			return true;
+		}
+		}
+
 	// validando Data
 	public static boolean validarData(String Data) {
 		String ValidarData = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19\\d{2}|20\\d{2})$";
@@ -65,15 +119,15 @@ public class Validar {
 			return false;
 		}
 	}
-
-	public static boolean ValidarCEPClient(String CEP){
-		ValidarCEPClient client = new  
-
-
-
-
-	}public stat
-
+	public class CEP {
+        public static boolean ViaCEPClient(String CEP){
+          ViaCEPClient client = new ViaCEPClient();
+            ViaCEPEndereco endereco = client.getEndereco("35170-056");
+                 System.out.println(endereco.getLocalidade());
+                endereco = client.getEndereco("35170056");
+                System.out.println(endereco.getLocalidade());
+    }
+}
 }
 
 // private String cidade;
