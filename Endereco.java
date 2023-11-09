@@ -4,7 +4,7 @@ abstract class Endereco {
     private String cidade;
     private String rua;
     private String bairro;
-    private int numero;
+    private String numero;
     private String complemento;
 
     // Construtor de Endereco que utiliza o construtor de Funcionario e inicializa
@@ -12,7 +12,7 @@ abstract class Endereco {
     public Endereco() {
     }
 
-    public Endereco(String CEP, String cidade, String rua, String bairro, int numero, String complemento) {
+    public Endereco(String CEP, String cidade, String rua, String bairro, String numero, String complemento) {
         this.CEP = CEP;
         this.cidade = cidade;
         this.rua = rua;
@@ -53,11 +53,11 @@ abstract class Endereco {
         this.bairro = bairro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

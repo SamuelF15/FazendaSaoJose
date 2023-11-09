@@ -6,7 +6,7 @@ public class Validar {
 
 	// validadores bases
 	public static boolean validarNomesLetras(String NomePess) {
-		String ValidarNomP = "^[A-Za-z]{1,85}$";
+		String ValidarNomP = "^[A-Za-z ]{1,85}$";
 		Pattern compiladorNom = Pattern.compile(ValidarNomP);
 		Matcher verificadorNom = compiladorNom.matcher(NomePess);
 		if (verificadorNom.matches()) {
@@ -19,7 +19,7 @@ public class Validar {
 	}
 
 	public static boolean validarSenha(String senha) {
-		String ValidarSenha = "^[a-zA-Z0-9!@#$%^&*()-_=+\\[\\]{};:'\",<.>/?]{8,20}${8,20}";
+		String ValidarSenha = "^[a-zA-Z0-9!@#$%^&*()-_=+\\[\\]{};:'\",<.>/?]{8,20}$";
 		Pattern compiladorSenha = Pattern.compile(ValidarSenha);
 		Matcher verificadorSenha = compiladorSenha.matcher(senha);
 		if (verificadorSenha.matches()) {
@@ -60,26 +60,7 @@ public class Validar {
 		}
 	}
 
-	public static boolean isValidCep(String CEP) {
-		// Verifica se o CEP corresponde ao formato "dd.ddd-ddd"
-		if (CEP.matches("\\d{5}-\\d{3}")) {
-			// Extrai os dígitos do CEP
-			String[] parts = CEP.split("-");
-			String digit1 = parts[0];
-			String digit2 = parts[1];
-
-			// Verifica as regras oficiais de CEP
-			int d1 = Integer.parseInt(digit1);
-			int d2 = Integer.parseInt(digit2);
-
-			if (d1 >= 10000 && d1 <= 99999 && d2 >= 100 && d2 <= 999) {
-				System.out.println(" ");
-				return true;
-			}
-		    }
-				System.out.println(" ");
-		        return false;
-	}
+	
 
 	public static boolean validarEmail(String Email) {
 		String ValidarEmail = "^[A-Za-z0-9._-]+@(gmail\\.com|outlook\\.com|hotmail\\.com|live\\.com|uol\\.com\\.br|bol\\.com\\.br|yahoo\\.com|ymail\\.com|globomail\\.com)$";
@@ -87,10 +68,10 @@ public class Validar {
 		Pattern compiladorEmail = Pattern.compile(ValidarEmail);
 		Matcher verificadorEmail = compiladorEmail.matcher(Email);
 		if (verificadorEmail.matches()) {
-
+			System.out.println(" ");
 			return true;
 		} else {
-
+			System.out.println(" ");
 			return false;
 		}
 	}
@@ -131,10 +112,43 @@ public class Validar {
 
 		// Verifica o segundo dígito verificador
 		if (Character.getNumericValue(cpf.charAt(10)) != segundoDigito) {
+			System.out.println(" ");
 			return false;
 		}
-
 		// Se chegou até aqui, o CPF é válido
+		System.out.println(" ");
 		return true;
+	}
+	public static boolean validarCEP(String CEP) {
+		// Verifica se o CEP corresponde ao formato "dd.ddd-ddd"
+		if (CEP.matches("\\d{5}-\\d{3}")) {
+			// Extrai os dígitos do CEP
+			String[] parts = CEP.split("-");
+			String digit1 = parts[0];
+			String digit2 = parts[1];
+
+			// Verifica as regras oficiais de CEP
+			int d1 = Integer.parseInt(digit1);
+			int d2 = Integer.parseInt(digit2);
+
+			if (d1 >= 10000 && d1 <= 99999 && d2 >= 100 && d2 <= 999) {
+				System.out.println(" ");
+				return true;
+			}
+		    }
+				System.out.println(" ");
+		        return false;
+	}
+	public static boolean validarNumCasa(String numero){
+		String ValidarInt = "^[1-9][0-9]{0,9}$";
+		Pattern CompiladorInt =  Pattern.compile(ValidarInt);
+		Matcher VerificadorInt = CompiladorInt.matcher(numero);
+		if (VerificadorInt.matches()){
+			System.out.println(" ");
+			return true;
+		}else{
+			System.out.println(" ");
+			return false;
+		}
 	}
 }
