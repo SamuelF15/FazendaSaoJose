@@ -1,5 +1,7 @@
+import Validacoes.Validar;
+
 abstract class Endereco {
-    
+
     private String CEP;
     private String cidade;
     private String rua;
@@ -7,8 +9,10 @@ abstract class Endereco {
     private int numero;
     private String complemento;
 
-    // Construtor de Endereco que utiliza o construtor de Funcionario e inicializa os atributos especificos de Endereco
-    public Endereco (){}
+    // Construtor de Endereco que utiliza o construtor de Funcionario e inicializa
+    // os atributos especificos de Endereco
+    public Endereco() {
+    }
 
     public Endereco(String CEP, String cidade, String rua, String bairro, int numero, String complemento) {
         this.CEP = CEP;
@@ -18,6 +22,8 @@ abstract class Endereco {
         this.numero = numero;
         this.complemento = complemento;
     }
+
+    Validar validador = new Validar();
 
     public String getCEP() {
         return CEP;
