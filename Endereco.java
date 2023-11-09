@@ -1,4 +1,4 @@
-public class Endereco {
+abstract class Endereco {
 
     private String CEP;
     private String cidade;
