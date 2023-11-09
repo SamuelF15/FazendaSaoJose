@@ -14,9 +14,9 @@ public class Aplicativo {
         }
         String senha = "12345!@#$%";
         if (Validar.validarSenha(senha)) {
-            System.out.println("senha válido: " + senha);
+            System.out.println("senha válida: " + senha);
         } else {
-            System.out.println("senha inválido: " + senha);
+            System.out.println("senha inválida: " + senha);
         }
 
         // Validar um CPF

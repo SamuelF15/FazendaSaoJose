@@ -19,7 +19,7 @@ public class Validar {
 	}
 
 	public static boolean validarSenha(String senha) {
-		String ValidarSenha = "^.*{8,20}";
+		String ValidarSenha = "^[a-zA-Z0-9!@#$%^&*()-_=+\\[\\]{};:'\",<.>/?]{8,20}${8,20}";
 		Pattern compiladorSenha = Pattern.compile(ValidarSenha);
 		Matcher verificadorSenha = compiladorSenha.matcher(senha);
 		if (verificadorSenha.matches()) {
