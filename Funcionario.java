@@ -1,3 +1,5 @@
+
+
 public class Funcionario extends Pessoa {
     private double salario;
   
@@ -6,7 +8,7 @@ public class Funcionario extends Pessoa {
     
     public Funcionario (){}
 
-    public Funcionario(double salario) {
+    public Funcionario( double salario) {
         super();
         this.salario = salario;
        

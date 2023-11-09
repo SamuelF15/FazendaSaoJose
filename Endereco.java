@@ -1,6 +1,4 @@
-import Validacoes.Validar;
-
-abstract class Endereco {
+public class Endereco {
 
     private String CEP;
     private String cidade;
@@ -22,8 +20,6 @@ abstract class Endereco {
         this.numero = numero;
         this.complemento = complemento;
     }
-
-    Validar validador = new Validar();
 
     public String getCEP() {
         return CEP;
