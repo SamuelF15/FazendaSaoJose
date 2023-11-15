@@ -26,7 +26,25 @@ abstract class Endereco {
     }
 
     public void setCEP(String CEP) {
-        this.CEP = CEP;
+        if (CEP.matches("\\d{5}-\\d{3}")) {
+			// Extrai os dígitos do CEP
+			String[] parts = CEP.split("-");
+			String digit1 = parts[0];
+			String digit2 = parts[1];
+
+			// Verifica as regras oficiais de CEP
+			int d1 = Integer.parseInt(digit1);
+			int d2 = Integer.parseInt(digit2);
+
+			if (d1 >= 10000 && d1 <= 99999 && d2 >= 100 && d2 <= 999) {
+				System.out.println(" ");
+				this.CEP = CEP;
+                System.out.println(" CEP válido"+ CEP);
+                System.out.println(" ");
+			}
+		    }
+				System.out.println(" ");
+		         System.out.println(" CEP invalido"+ CEP);
     }
 
     public String getCidade() {

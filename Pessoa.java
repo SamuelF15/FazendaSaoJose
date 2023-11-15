@@ -46,7 +46,55 @@ public class Pessoa extends Endereco {
     }
 
     public void setCPF(String CPF) {
-        this.CPF = CPF;
+        // Remove caracteres não numéricos do CPF
+		this.CPF = CPF.replaceAll("[^0-9]", "");
+
+		// Verifica se o CPF tem 11 dígitos
+		if (CPF.length() != 11) {
+			System.out.println("CPF invalido: " + CPF);
+		} else {
+                // Calcula o primeiro dígito verificador
+		        int soma = 0;
+		        for (int i = 0; i < 9; i++) {
+			    soma += Character.getNumericValue(CPF.charAt(i)) * (10 - i);
+		        }
+		        int primeiroDigito = 11 - (soma % 11);
+		        if (primeiroDigito > 9) {
+			      primeiroDigito = 0;
+		        }
+                else {
+                    // Verifica o primeiro dígito verificador
+		            if (Character.getNumericValue(CPF.charAt(9)) != primeiroDigito) {
+                    System.out.println(" ");
+			        System.out.println("CPF invalido" + CPF);
+		            } 
+                    else{ 
+                        // Calcula o segundo dígito verificador
+		                   soma = 0;
+		                   for (int i = 0; i < 10; i++) {
+			               soma += Character.getNumericValue( CPF.charAt(i)) * (11 - i);
+		                   }
+		                   int segundoDigito = 11 - (soma % 11);
+		                   if (segundoDigito > 9) {
+			               segundoDigito = 0;
+		                   }
+
+		                   // Verifica o segundo dígito verificador
+		                   if (Character.getNumericValue( CPF.charAt(10)) != segundoDigito) {
+			               System.out.println(" ");
+			               System.out.println("CPF invalido" + CPF);
+		                   } 
+                           else {
+                                System.out.println(" ");
+                                 this.CPF = CPF;
+		                        System.out.println("CPF Válido" + CPF);
+                           }
+		                   
+		            
+                    }
+                }
+
+            }
     }
 
     public void setDataNasc(Date DataNasc) {

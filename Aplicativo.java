@@ -4,42 +4,25 @@ public class Aplicativo {
 
     public static void main(String[] args) {
         // Exemplo de validação de atributos
-
-
+        
+        Usuario user = new Usuario();
+        Pessoa userPessoa = new Pessoa();
         //Validando Nomes
-        String nome = "Samuel";
-        if (Validar.validarNomesLetras(nome)) {
-            System.out.println("Nome válido: " + nome);
-        } else {
-            System.out.println("Nome inválido: " + nome);
-        }
-        String nomeUser = "Samuel Figueiredo";
-        if (Validar.validarNomesLetras(nomeUser)) {
-            System.out.println("Nome o usuário é válido: " + nomeUser);
-        } else {
-            System.out.println("Nome o usuário é inválido: " + nomeUser);
-        }
-
-        //Validando Senhas
-        String senha = "12345!@#$%";
-        if (Validar.validarSenha(senha)) {
-            System.out.println("Senha válida: " + senha);
-        } else {
-            System.out.println("Senha inválida: " + senha);
-        }
-String senhaUser = "12345!@#$%";
-        if (Validar.validarSenha(senhaUser)) {
-            System.out.println("Senha do usuário é válida: " + senhaUser);
-        } else {
-            System.out.println("Senha do usuário é inválida: " + senhaUser);
-        }
+        // String nome = "Samuel";
+        // if (Validar.validarNomesLetras(nome)) {
+        //     System.out.println("Nome válido: " + nome);
+        // } else {
+        //     System.out.println("Nome inválido: " + nome);
+        // }
+        //Validando Nome de usuario
+       String nomeUser = "Samuel Figueiredo";
+       user.setNomeUser(nomeUser);
+       // Validando Senha 
+       String senhaUser = "12345!@#$%";
+       user.setSenhaUser(senhaUser);
         // Validar um CPF
-        String cpf = "123.456.789-09";
-        if (Validar.validarCPF(cpf)) {
-            System.out.println("CPF válido: " + cpf);
-        } else {
-            System.out.println("CPF inválido: " + cpf);
-        }
+        String cpf = "115.636.106-04";
+        userPessoa.setCPF(cpf);
 
         // Validar uma data
         String data = "01/12/1990";
@@ -72,37 +55,37 @@ String senhaUser = "12345!@#$%";
         } else {
             System.out.println("CEP inválido: " + cep);
         }
-        //Validar uma Cidade
-        String cidade = "Coronel Fabriciano";
-        if (Validar.validarNomesLetras(cidade)){
-            System.out.println("Cidade válida: " + cidade);
-        }else{
-            System.out.println("Cidade inválida: " + cidade);
-        }
-        String rua = "Luiz Gonzaga da silva";
-        if (Validar.validarNomesLetras(rua)){
-            System.out.println("Rua válida: " + rua);
-        }else{
-             System.out.println("Rua inválida: " + rua);
-        }
-        String bairro = "JK";
-        if (Validar.validarNomesLetras(bairro)){
-            System.out.println("Bairro válido: " + bairro);
-        }else{
-            System.out.println("Bairro inválido: " + bairro);
-        }
-        String numero = "193";
-        if (Validar.validarNumCasa(numero)){
-            System.out.println("Número válido: " + numero);
-        }else{
-            System.out.println("Número inválido: " + numero);
-        }
-        String complemento = "Casa da esquina na avenida JK ao lado da catedral";
-        if (Validar.validarNomesLetras(bairro)){
-            System.out.println("Complemento válido: " + complemento);
-        }else{
-            System.out.println("Complemento inválido: " + complemento);
-        }
+        // //Validar uma Cidade
+        // String cidade = "Coronel Fabriciano";
+        // if (Validar.validarNomesLetras(cidade)){
+        //     System.out.println("Cidade válida: " + cidade);
+        // }else{
+        //     System.out.println("Cidade inválida: " + cidade);
+        // }
+        // String rua = "Luiz Gonzaga da silva";
+        // if (Validar.validarNomesLetras(rua)){
+        //     System.out.println("Rua válida: " + rua);
+        // }else{
+        //      System.out.println("Rua inválida: " + rua);
+        // }
+        // String bairro = "JK";
+        // if (Validar.validarNomesLetras(bairro)){
+        //     System.out.println("Bairro válido: " + bairro);
+        // }else{
+        //     System.out.println("Bairro inválido: " + bairro);
+        // }
+        // String numero = "193";
+        // if (Validar.validarNumCasa(numero)){
+        //     System.out.println("Número válido: " + numero);
+        // }else{
+        //     System.out.println("Número inválido: " + numero);
+        // }
+        // String complemento = "Casa da esquina na avenida JK ao lado da catedral";
+        // if (Validar.validarNomesLetras(bairro)){
+        //     System.out.println("Complemento válido: " + complemento);
+        // }else{
+        //     System.out.println("Complemento inválido: " + complemento);
+        // }
 
     }
 }
