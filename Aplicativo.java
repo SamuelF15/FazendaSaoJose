@@ -7,46 +7,33 @@ public class Aplicativo {
         
         Usuario user = new Usuario();
         Pessoa userPessoa = new Pessoa();
-        //Validando Nomes
-        // String nome = "Samuel";
-        // if (Validar.validarNomesLetras(nome)) {
-        //     System.out.println("Nome válido: " + nome);
-        // } else {
-        //     System.out.println("Nome inválido: " + nome);
-        // }
+       // Validando Nomes
+        String nome = "Samuel";
+        userPessoa.setNomePessoa(nome);
+
         //Validando Nome de usuario
        String nomeUser = "Samuel Figueiredo";
        user.setNomeUser(nomeUser);
+
        // Validando Senha 
        String senhaUser = "12345!@#$%";
        user.setSenhaUser(senhaUser);
+
         // Validar um CPF
         String cpf = "115.636.106-04";
         userPessoa.setCPF(cpf);
 
         // Validar uma data
         String data = "01/12/1990";
-        if (Validar.validarData(data)) {
-            System.out.println("Data válida: " + data);
-        } else {
-            System.out.println("Data inválida: " + data);
-        }
+        userPessoa.setDataNasc(data);
 
         // Validar um telefone
         String telefone = "11223344556";
-        if (Validar.validarTelefone(telefone)) {
-            System.out.println("Telefone válido: " + telefone);
-        } else {
-            System.out.println("Telefone inválido: " + telefone);
-        }
-
+       userPessoa.setTelefone(telefone);
+       
         // Validar um e-mail
         String email = "joao@gmail.com";
-        if (Validar.validarEmail(email)) {
-            System.out.println("E-mail válido: " + email);
-        } else {
-            System.out.println("E-mail inválido: " + email);
-        }
+        userPessoa.setEmailPessoa(email);
 
         // Validar um CEP
         String cep = "12345-678";

@@ -53,12 +53,14 @@ public class Usuario {
 		if (verificadorSenha.matches()) {
 			System.out.println(" ");
              this.SenhaUser = SenhaUser;
+             System.out.println(" ");
              System.out.print("Senha válida: "+ SenhaUser );
              System.out.println(" ");
 		} else {
 			System.out.println(" ");
             // this.SenhaUser = "Senha invalida ";
 			System.out.println("Senha invalida");
+            System.out.println(" ");
 		}
       
 		}

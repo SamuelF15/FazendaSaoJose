@@ -1,16 +1,18 @@
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Pessoa extends Endereco {
     private String NomePessoa;
     private String CPF;
-    private Date DataNasc;
+    private String DataNasc;
     private String Telefone;
     private String EmailPessoa;
 
     // Construtor
     public Pessoa(){}
 
-    public Pessoa(String NomePessoa, String CPF, Date DataNasc, String Telefone, String EmailPessoa) {
+    public Pessoa(String NomePessoa, String CPF, String DataNasc, String Telefone, String EmailPessoa) {
         super();
         this.NomePessoa = NomePessoa;
         this.CPF = CPF;
@@ -28,7 +30,7 @@ public class Pessoa extends Endereco {
         return CPF;
     }
 
-    public Date getDataNasc() {
+    public String getDataNasc() {
         return DataNasc;
     }
 
@@ -42,7 +44,17 @@ public class Pessoa extends Endereco {
 
     // Métodos setter
     public void setNomePessoa(String NomePessoa) {
-        this.NomePessoa = NomePessoa;
+        String ValidarNomP = "^[A-Za-z ]{1,85}$";
+		Pattern compiladorNom = Pattern.compile(ValidarNomP);
+		Matcher verificadorNom = compiladorNom.matcher(NomePessoa);
+		if (verificadorNom.matches()) {
+			System.out.println(" ");
+			this.NomePessoa = NomePessoa;
+            System.out.println("Nome  válido: " + NomePessoa);
+		} else {
+			System.out.println(" ");
+            System.out.println("Nome  inválido: " + NomePessoa);
+		}
     }
 
     public void setCPF(String CPF) {
@@ -51,6 +63,7 @@ public class Pessoa extends Endereco {
 
 		// Verifica se o CPF tem 11 dígitos
 		if (CPF.length() != 11) {
+            System.out.println(" ");
 			System.out.println("CPF invalido: " + CPF);
 		} else {
                 // Calcula o primeiro dígito verificador
@@ -87,6 +100,7 @@ public class Pessoa extends Endereco {
                            else {
                                 System.out.println(" ");
                                  this.CPF = CPF;
+                                 System.out.println(" ");
 		                        System.out.println("CPF Válido" + CPF);
                            }
 		                   
@@ -97,15 +111,52 @@ public class Pessoa extends Endereco {
             }
     }
 
-    public void setDataNasc(Date DataNasc) {
-        this.DataNasc = DataNasc;
+    public void setDataNasc(String DataNasc) {
+        String ValidarData = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19\\d{2}|20\\d{2})$";
+
+		Pattern compiladorData = Pattern.compile(ValidarData);
+		Matcher verificadorData = compiladorData.matcher(DataNasc);
+		if (verificadorData.matches()) {
+			System.out.println(" ");
+			 this.DataNasc = DataNasc;
+             System.out.println("Data de nascimento válida: " + DataNasc);
+
+		} else {
+			System.out.println(" ");
+			System.out.println("Data  de nascimento inválida: " +  DataNasc);
+            System.out.println(" ");
+		}
     }
 
     public void setTelefone(String Telefone) {
-        this.Telefone = Telefone;
+        String ValidarTel = "^[0-9]{11}";
+		Pattern compiladorTel = Pattern.compile(ValidarTel);
+		Matcher verificadorTel = compiladorTel.matcher(Telefone);
+
+		if (verificadorTel.matches()) {
+			System.out.println(" ");
+			 this.Telefone = Telefone;
+             System.out.println("Telefone válido: " + Telefone);
+             System.out.println(" ");
+		} else {
+			System.out.println(" ");
+			System.out.println("Telefone inválido: " + Telefone);
+            System.out.println(" ");
+		}
     }
 
     public void setEmailPessoa(String EmailPessoa) {
-        this.EmailPessoa = EmailPessoa;
+        String ValidarEmail = "^[A-Za-z0-9._-]+@(gmail\\.com|outlook\\.com|hotmail\\.com|live\\.com|uol\\.com\\.br|bol\\.com\\.br|yahoo\\.com|ymail\\.com|globomail\\.com)$";
+
+		Pattern compiladorEmail = Pattern.compile(ValidarEmail);
+		Matcher verificadorEmail = compiladorEmail.matcher( EmailPessoa);
+		if (verificadorEmail.matches()) {
+			System.out.println(" ");
+			 this.EmailPessoa = EmailPessoa;
+             System.out.println("E-mail válido: " + EmailPessoa);
+		} else {
+			System.out.println(" ");
+            System.out.println("E-mail inválido: " +  EmailPessoa);
+		}
     }
 }
