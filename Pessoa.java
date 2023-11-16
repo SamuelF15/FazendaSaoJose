@@ -44,16 +44,16 @@ public class Pessoa extends Endereco {
 
     // Métodos setter
     public void setNomePessoa(String NomePessoa) {
-        String ValidarNomP = "^[A-Za-z ]{1,85}$";
+        String ValidarNomP = "[a-zA-Z ]+";
 		Pattern compiladorNom = Pattern.compile(ValidarNomP);
 		Matcher verificadorNom = compiladorNom.matcher(NomePessoa);
 		if (verificadorNom.matches()) {
 			System.out.println(" ");
 			this.NomePessoa = NomePessoa;
-            System.out.println("Nome  válido: " + NomePessoa);
+            System.out.println("Nome válido: " + NomePessoa);
 		} else {
 			System.out.println(" ");
-            System.out.println("Nome  inválido: " + NomePessoa);
+            System.out.println("Nome inválido: " + NomePessoa);
 		}
     }
 

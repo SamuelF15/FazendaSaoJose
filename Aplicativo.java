@@ -30,49 +30,33 @@ public class Aplicativo {
         // Validar um telefone
         String telefone = "11223344556";
        userPessoa.setTelefone(telefone);
-       
+
         // Validar um e-mail
         String email = "joao@gmail.com";
         userPessoa.setEmailPessoa(email);
 
         // Validar um CEP
         String cep = "12345-678";
-        if (Validar.validarCEP(cep)) {
-            System.out.println("CEP válido: " + cep);
-        } else {
-            System.out.println("CEP inválido: " + cep);
-        }
+        userPessoa.setCEP(cep);
+
         // //Validar uma Cidade
-        // String cidade = "Coronel Fabriciano";
-        // if (Validar.validarNomesLetras(cidade)){
-        //     System.out.println("Cidade válida: " + cidade);
-        // }else{
-        //     System.out.println("Cidade inválida: " + cidade);
-        // }
-        // String rua = "Luiz Gonzaga da silva";
-        // if (Validar.validarNomesLetras(rua)){
-        //     System.out.println("Rua válida: " + rua);
-        // }else{
-        //      System.out.println("Rua inválida: " + rua);
-        // }
-        // String bairro = "JK";
-        // if (Validar.validarNomesLetras(bairro)){
-        //     System.out.println("Bairro válido: " + bairro);
-        // }else{
-        //     System.out.println("Bairro inválido: " + bairro);
-        // }
-        // String numero = "193";
-        // if (Validar.validarNumCasa(numero)){
-        //     System.out.println("Número válido: " + numero);
-        // }else{
-        //     System.out.println("Número inválido: " + numero);
-        // }
-        // String complemento = "Casa da esquina na avenida JK ao lado da catedral";
-        // if (Validar.validarNomesLetras(bairro)){
-        //     System.out.println("Complemento válido: " + complemento);
-        // }else{
-        //     System.out.println("Complemento inválido: " + complemento);
-        // }
+        String cidade = "Coronel Fabriciano";
+        userPessoa.setCidade(cidade);
+
+        // Validar rua 
+        String rua = "Luiz Gonzaga da silva";
+        userPessoa.setRua(rua);
+
+        //Validar bairro
+        String bairro = "JK";
+        userPessoa.setBairro(bairro);
+
+        String numero = "193";
+        userPessoa.setNumero(numero);
+
+        //validar complemento 
+        String complemento = "Casa da esquina na avenida JK ao lado da catedral";
+        userPessoa.setComplemento(complemento);
 
     }
 }

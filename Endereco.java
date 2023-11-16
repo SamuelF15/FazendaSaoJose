@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 abstract class Endereco {
 
     private String CEP;
@@ -39,12 +42,13 @@ abstract class Endereco {
 			if (d1 >= 10000 && d1 <= 99999 && d2 >= 100 && d2 <= 999) {
 				System.out.println(" ");
 				this.CEP = CEP;
-                System.out.println(" CEP válido"+ CEP);
+                System.out.println(" CEP válido: "+ CEP);
                 System.out.println(" ");
-			}
+			}else{
+                System.out.println(" ");
+		         System.out.println(" CEP invalido: "+ CEP);
+            }
 		    }
-				System.out.println(" ");
-		         System.out.println(" CEP invalido"+ CEP);
     }
 
     public String getCidade() {
@@ -52,7 +56,17 @@ abstract class Endereco {
     }
 
     public void setCidade(String cidade) {
-        this.cidade = cidade;
+        String ValidarNomP = "[a-zA-Z ]+";
+		Pattern compiladorNom = Pattern.compile(ValidarNomP);
+		Matcher verificadorNom = compiladorNom.matcher(cidade);
+		if (verificadorNom.matches()) {
+			System.out.println(" ");
+			 this.cidade = cidade;
+            System.out.println("Cidade válida: " + cidade);
+		} else {
+			System.out.println(" ");
+            System.out.println("Cidade inválida: " + cidade);
+		}
     }
 
     public String getRua() {
@@ -60,7 +74,17 @@ abstract class Endereco {
     }
 
     public void setRua(String rua) {
-        this.rua = rua;
+         String ValidarNomP = "[a-zA-Z ]+";
+		Pattern compiladorNom = Pattern.compile(ValidarNomP);
+		Matcher verificadorNom = compiladorNom.matcher(rua);
+		if (verificadorNom.matches()) {
+			System.out.println(" ");
+			this.rua = rua;
+            System.out.println("Rua válida: " + rua);
+		} else {
+			System.out.println(" ");
+            System.out.println("Rua inválida: " + rua);
+		}
     }
 
     public String getBairro() {
@@ -68,7 +92,17 @@ abstract class Endereco {
     }
 
     public void setBairro(String bairro) {
-        this.bairro = bairro;
+        String ValidarNomP = "[a-zA-Z ]+";
+		Pattern compiladorNom = Pattern.compile(ValidarNomP);
+		Matcher verificadorNom = compiladorNom.matcher(bairro);
+		if (verificadorNom.matches()) {
+			System.out.println(" ");
+			this.bairro = bairro;
+            System.out.println("Bairro válido: " + bairro);
+		} else {
+			System.out.println(" ");
+            System.out.println("Bairro inválido: " + bairro);
+		}
     }
 
     public String getNumero() {
@@ -76,7 +110,19 @@ abstract class Endereco {
     }
 
     public void setNumero(String numero) {
-        this.numero = numero;
+        String ValidarInt = "^[1-9][0-9]{0,9}$";
+		Pattern CompiladorInt =  Pattern.compile(ValidarInt);
+		Matcher VerificadorInt = CompiladorInt.matcher(numero);
+		if (VerificadorInt.matches()){
+			System.out.println(" ");
+			this.numero = numero;
+            System.out.println("Número válido: " + numero);
+            System.out.println(" ");
+		}else{
+			System.out.println(" ");
+            System.out.println("Número inválido: " + numero);
+            System.out.println(" ");
+		}
     }
 
     public String getComplemento() {
@@ -84,6 +130,16 @@ abstract class Endereco {
     }
 
     public void setComplemento(String complemento) {
-        this.complemento = complemento;
+         String ValidarNomP = "[a-zA-Z ]+";
+		Pattern compiladorNom = Pattern.compile(ValidarNomP);
+		Matcher verificadorNom = compiladorNom.matcher(complemento);
+		if (verificadorNom.matches()) {
+			System.out.println(" ");
+			this.complemento = complemento;
+            System.out.println("Complemento válido: " + complemento);
+		} else {
+			System.out.println(" ");
+            System.out.println("Complemento inválido: " + complemento);
+		}
     }
 }
