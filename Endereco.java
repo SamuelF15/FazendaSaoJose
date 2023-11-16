@@ -42,11 +42,11 @@ abstract class Endereco {
 			if (d1 >= 10000 && d1 <= 99999 && d2 >= 100 && d2 <= 999) {
 				System.out.println(" ");
 				this.CEP = CEP;
-                System.out.println(" CEP válido: "+ CEP);
+                System.out.println("CEP válido: "+ CEP);
                 System.out.println(" ");
 			}else{
                 System.out.println(" ");
-		         System.out.println(" CEP invalido: "+ CEP);
+		         System.out.println("CEP invalido: "+ CEP);
             }
 		    }
     }
